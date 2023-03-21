@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ApodTestApp.MainPage">
+
+    
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label x:Name="TheTitle" Text="" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" 
+                   TextColor="White" FontSize="Large" FontAttributes="Bold"/>
+            <Button x:Name="SettingsButton" FontFamily="FA-S" FontSize="Medium" Text="{StaticResource IconGear}" Clicked="SettingsButton_Clicked"
+                    HeightRequest="50" WidthRequest="100" HorizontalOptions="EndAndExpand" />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <SwipeView>
+
+        <SwipeView.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Left" Swiped="OnSwiped"/>
+            <SwipeGestureRecognizer Direction="Right" Swiped="OnSwiped"/>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="2"/>
+        </SwipeView.GestureRecognizers>
+
+        <Grid RowDefinitions="*, Auto">
+            <Image x:Name="TheImage" Margin="10" HorizontalOptions="Center" VerticalOptions="Center"
+                    SemanticProperties.Description="Random Image"/>
+            <Label x:Name="Description" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"
+                   FontSize="16" Margin="6, 10, 6, 0" Text="Sample Text" IsVisible="false"/>
+        </Grid>
+
+    </SwipeView>
+
+</ContentPage>

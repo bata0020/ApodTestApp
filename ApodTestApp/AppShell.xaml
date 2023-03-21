@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ApodTestApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ApodTestApp"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            Icon="house.png"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+
+        <ShellContent 
+            Title="Pick A Date"
+            Icon="calendar.png"
+            ContentTemplate="{DataTemplate local:Calendar}"
+            Route="Calendar"/>
+        
+        <ShellContent 
+            Title="Range Of Dates"
+            Icon="object.png"
+            ContentTemplate="{DataTemplate local:RangeOfDates}"
+            Route="RangeOfDates"/>
+
+        <ShellContent 
+            Title="Random"
+            Icon="images.png"
+            ContentTemplate="{DataTemplate local:Random}"
+            Route="RangeOfDates"/>
+
+        <ShellContent
+            Title="SlideShow"
+            Icon="display.png"
+            ContentTemplate="{DataTemplate local:SlideShowPage}"
+            Route="SlideShow" />
+    </TabBar>
+    
+    
+    
+    
+
+</Shell>
